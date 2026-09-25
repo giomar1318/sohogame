@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#c8edf3"><title>탁주와 쪼코의 간식 대소동</title><meta name="description" content="탁주와 쪼코와 함께하는 30초 간식 모으기 게임"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23ffc947'/%3E%3Ctext x='10' y='47' font-size='44'%3E★%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"></head>
+<body>
+<main class="cabinet">
+ <div class="desktop-label"><span>TAKJU & CHOCO</span><span>SNACK ADVENTURE</span></div>
+ <section id="game" class="game" aria-label="간식 대소동 게임">
+  <div class="park"><div class="sky-glow"></div><div class="horizon"></div></div>
+  <header class="topbar"><span class="brand">탁주 <i>&</i> 쪼코</span><button id="sound" class="icon-button" aria-label="소리 끄기" aria-pressed="true">♪</button></header>
+  <section id="home" class="screen home">
+   <div class="pill">30초의 달콤한 모험</div>
+   <h1><span>탁주와 쪼코의</span>간식 대소동<span class="bang">!</span></h1>
+   <p class="intro">맛있는 간식을 모아<br>최고 점수에 도전해봐!</p>
+   <div class="hero"><span class="floating snack-one">🍪</span><span class="floating snack-two">⭐</span><span class="floating snack-three">🦴</span><div class="duo"><img data-character="takju" alt="빨간 재킷을 입은 탁주"><img data-character="choco" alt="멜빵옷을 입은 쪼코"></div><div class="name-tags"><span>탁주</span><span>쪼코</span></div></div>
+   <div class="home-bottom"><button id="start" class="primary">게임 시작 <span>▶</span></button><div class="best-line">♛ 최고 기록 <b id="home-best">000</b></div><p class="micro">좌우로 움직여 간식을 받아요!</p></div>
+  </section>
+  <section id="select" class="screen select" hidden><div class="pill">함께할 친구를 골라요</div><h2>누구와 함께할까?</h2><p>강아지에게 줄 간식을 모아줘!</p><div class="level-picker" aria-label="레벨 선택"><button data-level="1" aria-pressed="true">1 · 간식 대소동</button><button data-level="2" id="level-2" disabled aria-pressed="false">🔒 2 · 간식 10개로 열기</button></div><p id="level-hint" class="level-hint"></p><div class="cards"><button class="character-card" data-pick="takju"><img data-character="takju" alt="탁주"><strong>탁주</strong><span>탁주 선택 →</span></button><button class="character-card pink" data-pick="choco"><img data-character="choco" alt="쪼코"><strong>쪼코</strong><span>쪼코 선택 →</span></button></div><div class="guide"><b>이렇게 놀아요</b><p>🦴 +10　🍪 +20　🥩 +30　⭐ +50</p><p>🌈 5초 동안 2배　✨ 함께 +100</p><p class="danger-guide"><span class="danger-sample">🍫</span> <span class="danger-sample">🧅</span> <span class="danger-sample">🍇</span> 빨간 ×는 피해요!</p><small>방향키 ← → · 손가락 드래그 · 아래 이동 버튼</small></div><button class="text-button" id="back">← 처음으로</button></section>
+  <section id="play" class="screen play" hidden><div class="hud"><div><small>SCORE</small><b id="score">000</b></div><div class="timer"><small>TIME</small><b id="time">30</b></div><div><small>BEST</small><b id="best">000</b></div></div><div class="life-row"><span id="lives" aria-label="생명 3개">♥ ♥ ♥</span><span id="double" hidden>DOUBLE SCORE! ×2 <b id="double-time">5</b></span></div><div id="mission" class="mission"></div><div id="warmup" class="warmup">처음 5초는 연습! 간식을 받아봐요</div><div id="field" class="field"><div id="items"></div><div id="effects"></div><div id="basket" class="basket" hidden>🧺</div><div id="player" class="player"><img alt="선택한 캐릭터"><span class="player-marker"></span><span id="cheer" class="cheer" hidden>냠냠!</span></div><div id="partner" class="partner" hidden><img alt="함께하는 친구"></div></div><div id="toast" class="toast" role="status"></div><div class="controls"><button id="left" aria-label="왼쪽으로 이동">←</button><span>간식을 향해 움직여요!</span><button id="right" aria-label="오른쪽으로 이동">→</button></div></section>
+  <div id="countdown" class="countdown" hidden><span>준비됐나요?</span><b id="count">3</b></div>
+  <section id="result" class="screen result" hidden><div class="pill">오늘도 멋진 모험!</div><h2 id="result-title">간식 대소동 성공!</h2><div class="result-duo duo"><img data-character="takju" alt="탁주"><img data-character="choco" alt="쪼코"></div><div id="collected" class="collected">간식을 모았어!</div><div class="result-score"><span>오늘의 점수</span><strong><b id="final-score">0</b><small>점</small></strong><div>BEST SCORE <b id="final-best">0</b></div></div><p id="message"></p><div id="badge" class="badge" hidden>🏅 피크닉 간식왕</div><button id="next-level" class="primary" hidden>2레벨로 출발! →</button><button id="retry" class="primary">↻ 다시 도전하기</button><button id="change" class="secondary">캐릭터·레벨 바꾸기</button></section>
+ </section><footer>작은 간식, 커다란 즐거움.</footer>
+</main><script src="characters.js"></script><script src="game.js"></script>
+</body></html>
+
